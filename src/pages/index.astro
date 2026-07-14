@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 
 <Layout title="Back to Wellness Chiropractic | Kirkwood, MO — Chiropractic Care, SoftWave & Red Light Therapy">
   <Fragment slot="head-extra">
-    <script type="application/ld+json" set:html={{
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "Back to Wellness Chiropractic",
@@ -27,7 +27,7 @@ import Footer from '../components/Footer.astro';
         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "14:00", "closes": "18:00" },
         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "12:00" }
       ]
-    }} />
+    })} />
   </Fragment>
 
   <Header />
@@ -87,7 +87,7 @@ import Footer from '../components/Footer.astro';
             </a>
           </div>
           <div data-reveal="right" class="twocol-image">
-            <img src="https://images.unsplash.com/photo-1551190822-a9333a8e16e4?w=700&h=600&fit=crop&q=80" alt="Chiropractor adjusting a patient's back with gentle, personalized care" width="700" height="600" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&h=600&fit=crop&q=80" alt="Chiropractor adjusting a patient's back with gentle, personalized care" width="700" height="600" loading="lazy" />
           </div>
         </div>
       </div>
@@ -321,10 +321,10 @@ import Footer from '../components/Footer.astro';
           </div>
           <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
             <div data-reveal="up" style="border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md);">
-              <img src="https://images.unsplash.com/photo-1551190822-a9333a8e16e4?w=600&h=400&fit=crop&q=80" alt="Chiropractic treatment room at Back to Wellness" width="600" height="400" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=400&fit=crop&q=80" alt="Chiropractic treatment room at Back to Wellness" width="600" height="400" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
             <div data-reveal="up" style="border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-md);">
-              <img src="https://images.unsplash.com/photo-1576091160399-2173dba999ef?w=600&h=400&fit=crop&q=80" alt="SoftWave therapy equipment at Back to Wellness Chiropractic" width="600" height="400" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&h=400&fit=crop&q=80" alt="SoftWave therapy equipment at Back to Wellness Chiropractic" width="600" height="400" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
           </div>
         </div>

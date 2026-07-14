@@ -1,29 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Back to Wellness Chiropractic in Kirkwood, MO — personalized chiropractic care, SoftWave Therapy, and Red Light Therapy. Over 24 years of experience. Same-day appointments available."><meta name="generator" content="Astro v7.0.9"><title>New Patient Specials | Back to Wellness Chiropractic — $49 Treatments</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta property="og:title" content="New Patient Specials | Back to Wellness Chiropractic — $49 Treatments"><meta property="og:description" content="Back to Wellness Chiropractic in Kirkwood, MO — personalized chiropractic care, SoftWave Therapy, and Red Light Therapy. Over 24 years of experience. Same-day appointments available."><meta property="og:type" content="website"><meta property="og:url" content="https://stlbackdoc.com"><meta name="twitter:card" content="summary_large_image"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Footer.BEuyxDj_.css"></head><body><a href="#main-content" class="skip-link">Skip to main content</a><header class="site-header" id="site-header"><div class="site-header-inner"><a href="/" class="logo"><span class="logo-mark">B</span><span><span class="logo-text">Back to Wellness</span><span class="logo-sub">Chiropractic</span></span></a><nav class="nav-links" aria-label="Main navigation"><a href="/" class="nav-link">Home</a><a href="/about" class="nav-link">About</a><a href="/services" class="nav-link">Services</a><a href="/specials" class="nav-link">Specials</a><a href="/contact" class="nav-link">Contact</a></nav><a href="/contact" class="nav-cta">Request Appointment</a><button class="mobile-toggle" id="mobile-btn" aria-label="Open menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></header><div class="mobile-menu" id="mobile-menu"><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/specials">Specials</a><a href="/contact">Contact</a><a href="/contact" class="nav-cta">Request Appointment</a></div><script>
-  (function() {
-    const header = document.getElementById('site-header');
-    const mobileBtn = document.getElementById('mobile-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 10) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    });
-    
-    mobileBtn.addEventListener('click', function() {
-      const open = mobileMenu.classList.toggle('open');
-      mobileBtn.setAttribute('aria-expanded', open);
-    });
-    
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileMenu.classList.remove('open');
-        mobileBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-    
-    // Scroll reveal
-    const revealObserver = new IntersectionObserver(function(entries) {
+  // Scroll reveal — must wait for DOM to be fully parsed
+  function initScrollReveal() {
+    var revealObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
@@ -31,9 +9,44 @@
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    
+
     document.querySelectorAll('[data-reveal]').forEach(function(el) {
       revealObserver.observe(el);
     });
+  }
+
+  // Header + mobile menu — safe to init early (elements are in header, already parsed)
+  (function() {
+    var header = document.getElementById('site-header');
+    var mobileBtn = document.getElementById('mobile-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+
+    if (header) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      });
+    }
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', function() {
+        var open = mobileMenu.classList.toggle('open');
+        mobileBtn.setAttribute('aria-expanded', open);
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Scroll reveal must run AFTER full DOM parse
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollReveal);
+    } else {
+      initScrollReveal();
+    }
   })();
 </script><main id="main-content"><section class="page-banner"><div class="container-wide"><h1>New Patient Specials</h1><p>Risk-free opportunities to experience the benefits of our advanced treatments. No financial commitment required to explore how we can improve your well-being.</p></div></section><!-- Intro --><section class="section section-light"><div class="container-wide" style="max-width: 760px; text-align: center;"><div data-reveal="up"><span class="section-eyebrow">Welcome, New Patients</span><h2 class="section-title">Start Your Journey to Better Health</h2><p class="section-subtitle" style="margin-left: auto; margin-right: auto;">At Back to Wellness Chiropractic, we're dedicated to helping new patients revitalize their health through natural, personalized care. With over 24 years of experience, our chiropractors use a holistic approach, considering the whole person to craft tailored wellness plans that address your unique needs.</p></div></div></section><!-- Pricing Cards --><section class="section section-cream" id="specials"><div class="container-wide"><div class="grid-3" style="max-width: 960px; margin: 0 auto;"><div data-reveal="up"><div class="pricing-card" style="height: 100%; display: flex; flex-direction: column;"><div class="pricing-price">$49</div><div class="pricing-name">SoftWave Treatment</div><p class="pricing-desc" style="flex: 1;">Initial SoftWave consultation and treatment. Experience acoustic wave therapy that stimulates natural healing, reduces inflammation, and relieves pain — all without medication or surgery.</p><a href="/contact" class="btn-primary" style="background: var(--color-navy); margin-top: 1rem;">Book Now</a></div></div><div data-reveal="up"><div class="pricing-card featured" style="height: 100%; display: flex; flex-direction: column;"><div class="pricing-badge">Most Popular</div><div class="pricing-price">$49</div><div class="pricing-name">Red Light Therapy</div><p class="pricing-desc" style="flex: 1;">Initial Red Light consultation and treatment. Discover low-level light therapy that supports cellular repair, reduces inflammation, and promotes natural pain relief and recovery.</p><a href="/contact" class="btn-primary" style="margin-top: 1rem;">Book Now</a></div></div><div data-reveal="up"><div class="pricing-card" style="height: 100%; display: flex; flex-direction: column;"><div class="pricing-price">$150</div><div class="pricing-name">Self-Pay 1st Visit</div><p class="pricing-desc" style="flex: 1;">Comprehensive first-visit package if your insurance does not cover your care. Includes a consultation, examination, X-rays if needed, and an adjustment — everything you need to get started.</p><a href="/contact" class="btn-primary" style="background: var(--color-navy); margin-top: 1rem;">Book Now</a></div></div></div></div></section><!-- Why Wait --><section class="section section-light"><div class="container-wide" style="max-width: 640px; text-align: center;"><div data-reveal="up"><h2 class="section-title" style="margin-bottom: 1.5rem;">Why Wait to Feel Better?</h2><p style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: 2rem;">There's no financial commitment required to explore how we can improve your well-being. Book your appointment today and start your journey to better health.</p><a href="/contact" class="btn-primary">Book Your Appointment Today<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a></div></div></section><!-- CTA --><section class="cta-band"><div class="container-wide"><div data-reveal="up"><h2>Questions About Our Specials?</h2><p>Call us at <a href="tel:+13143942093" style="color: #fff; text-decoration: underline;">(314) 394-2093</a> or request an appointment online.</p><a href="/contact" class="btn-primary">Request an Appointment</a></div></div></section></main><footer class="site-footer"><div class="container-wide"><div class="footer-grid"><div><div class="footer-brand">Back to Wellness Chiropractic</div><div class="footer-brand-sub">Personalized chiropractic care, SoftWave & Red Light Therapy in Kirkwood, MO.</div><div style="font-size: 0.875rem; color: rgba(255,255,255,0.6); line-height: 1.7;"><p>11229 Manchester Road</p><p>Kirkwood, MO 63122</p><p>Lower Level Behind Revel Kitchen</p><p style="margin-top: 0.75rem;"><a href="tel:+13143942093" style="color: var(--color-teal-light); font-weight: 500;">(314) 394-2093</a></p></div></div><div><div class="footer-heading">Hours</div><div style="font-size: 0.875rem; color: rgba(255,255,255,0.6); line-height: 1.8;"><p>Mon, Wed, Thu</p><p style="padding-left: 1rem;">9:00 am - 12:00 pm</p><p style="padding-left: 1rem;">2:00 pm - 6:00 pm</p><p>Tuesday</p><p style="padding-left: 1rem;">2:00 pm - 6:00 pm</p><p>Friday</p><p style="padding-left: 1rem;">9:00 am - 12:00 pm</p><p>Sat - Sun: Closed</p></div></div><div><div class="footer-heading">Quick Links</div><a href="/" class="footer-link">Home</a><a href="/about" class="footer-link">About</a><a href="/services" class="footer-link">Services</a><a href="/specials" class="footer-link">New Patient Specials</a><a href="/contact" class="footer-link">Contact</a></div></div><div class="footer-bottom"><p>&copy; 2026 Back to Wellness Chiropractic. All rights reserved.</p></div></div></footer></body></html>
