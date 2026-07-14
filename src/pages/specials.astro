@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="New Patient Specials | Back to Wellness Chiropractic — $49 Treatments">
+  <Header />
+  <main id="main-content">
+    <section class="page-banner">
+      <div class="container-wide">
+        <h1>New Patient Specials</h1>
+        <p>Risk-free opportunities to experience the benefits of our advanced treatments. No financial commitment required to explore how we can improve your well-being.</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section section-light">
+      <div class="container-wide" style="max-width: 760px; text-align: center;">
+        <div data-reveal="up">
+          <span class="section-eyebrow">Welcome, New Patients</span>
+          <h2 class="section-title">Start Your Journey to Better Health</h2>
+          <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+            At Back to Wellness Chiropractic, we're dedicated to helping new patients revitalize their health through natural, personalized care. With over 24 years of experience, our chiropractors use a holistic approach, considering the whole person to craft tailored wellness plans that address your unique needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="section section-cream" id="specials">
+      <div class="container-wide">
+        <div class="grid-3" style="max-width: 960px; margin: 0 auto;">
+          <div data-reveal="up">
+            <div class="pricing-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="pricing-price">$49</div>
+              <div class="pricing-name">SoftWave Treatment</div>
+              <p class="pricing-desc" style="flex: 1;">Initial SoftWave consultation and treatment. Experience acoustic wave therapy that stimulates natural healing, reduces inflammation, and relieves pain — all without medication or surgery.</p>
+              <a href="/contact" class="btn-primary" style="background: var(--color-navy); margin-top: 1rem;">Book Now</a>
+            </div>
+          </div>
+          <div data-reveal="up">
+            <div class="pricing-card featured" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="pricing-badge">Most Popular</div>
+              <div class="pricing-price">$49</div>
+              <div class="pricing-name">Red Light Therapy</div>
+              <p class="pricing-desc" style="flex: 1;">Initial Red Light consultation and treatment. Discover low-level light therapy that supports cellular repair, reduces inflammation, and promotes natural pain relief and recovery.</p>
+              <a href="/contact" class="btn-primary" style="margin-top: 1rem;">Book Now</a>
+            </div>
+          </div>
+          <div data-reveal="up">
+            <div class="pricing-card" style="height: 100%; display: flex; flex-direction: column;">
+              <div class="pricing-price">$150</div>
+              <div class="pricing-name">Self-Pay 1st Visit</div>
+              <p class="pricing-desc" style="flex: 1;">Comprehensive first-visit package if your insurance does not cover your care. Includes a consultation, examination, X-rays if needed, and an adjustment — everything you need to get started.</p>
+              <a href="/contact" class="btn-primary" style="background: var(--color-navy); margin-top: 1rem;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Wait -->
+    <section class="section section-light">
+      <div class="container-wide" style="max-width: 640px; text-align: center;">
+        <div data-reveal="up">
+          <h2 class="section-title" style="margin-bottom: 1.5rem;">Why Wait to Feel Better?</h2>
+          <p style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: 2rem;">
+            There's no financial commitment required to explore how we can improve your well-being. Book your appointment today and start your journey to better health.
+          </p>
+          <a href="/contact" class="btn-primary">
+            Book Your Appointment Today
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="container-wide">
+        <div data-reveal="up">
+          <h2>Questions About Our Specials?</h2>
+          <p>Call us at <a href="tel:+13143942093" style="color: #fff; text-decoration: underline;">(314) 394-2093</a> or request an appointment online.</p>
+          <a href="/contact" class="btn-primary">Request an Appointment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
